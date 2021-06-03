@@ -1,0 +1,29 @@
+
+spring:
+  application:
+    name: cooking-backend
+  main:
+    banner-mode: "off"
+  datasource:
+    driver-class-name: 'org.postgresql.Driver'
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+elide:
+  modelPackage: 'com.github.cookingbackend.model'
+  json-api:
+    path: /api/v1
+    enabled: true
+  graphql:
+    path: /graphql/api/v1
+    enabled: false
+  swagger:
+    path: /doc
+    enabled: true
+  async:
+    enabled: false
+  aggregation-store:
+    enabled: false
+  dynamic-config:
+    enabled: false
