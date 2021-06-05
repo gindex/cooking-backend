@@ -17,9 +17,9 @@ import lombok.NoArgsConstructor;
 @Data
 public class Recipe {
 
-    @Id
-    @GeneratedValue
-    @NotNull
-    UUID id;
+	@Id
+	@GeneratedValue
+	@NotNull
+	UUID id;
 
 }

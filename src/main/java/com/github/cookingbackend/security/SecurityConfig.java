@@ -9,15 +9,15 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Override
-    public void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity
-                .authorizeRequests(authorize ->
-                        {
-                            authorize.mvcMatchers("/api-docs").permitAll();
-                            authorize.mvcMatchers("/**").permitAll();
-                        }
-                );
-    }
+	@Override
+	public void configure(HttpSecurity httpSecurity) throws Exception {
+		httpSecurity
+			.authorizeRequests(authorize ->
+				{
+					authorize.mvcMatchers("/api-docs").permitAll();
+					authorize.mvcMatchers("/**").permitAll();
+				}
+			);
+	}
 
 }
