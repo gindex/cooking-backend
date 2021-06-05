@@ -33,9 +33,12 @@ dependencies {
 	testImplementation "org.testcontainers:junit-jupiter:1.15.3"
 	testImplementation group: 'org.testcontainers', name: 'postgresql', version: '1.15.3'
 
-	//lombok
+	// lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
+	// logging
+	implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '6.6'
 }
 
 test {
