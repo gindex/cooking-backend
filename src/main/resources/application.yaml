@@ -15,10 +15,10 @@ spring:
 elide:
   modelPackage: 'com.github.cookingbackend.model'
   json-api:
-    path: /api/v1
+    path: /api
     enabled: true
   graphql:
-    path: /graphql/api/v1
+    path: /graphql/api
     enabled: false
   swagger:
     path: /api-docs
