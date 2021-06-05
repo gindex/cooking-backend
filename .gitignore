@@ -64,7 +64,9 @@ gradle-app.setting
 
 *.gz
 application-local.yml
+application-local.yaml
 application-*-local.yml
+application-*-local.yaml
 gcp-credentials.json
 
 gradle/wrapper/dists/
