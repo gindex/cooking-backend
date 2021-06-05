@@ -13,31 +13,26 @@ repositories {
 }
 
 dependencies {
-	// spring
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation group: 'com.yahoo.elide', name: 'elide-spring-boot-starter', version: '5.0.1'
 
-	//persistence
 	implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.20'
 	implementation group: 'org.flywaydb', name: 'flyway-core', version: '7.9.1'
 
-	// serialization
 	implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.12.3'
 	implementation group: 'com.vladmihalcea', name: 'hibernate-types-52', version: '2.11.1'
 
-	// testing
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation "org.testcontainers:testcontainers:1.15.3"
 	testImplementation "org.testcontainers:junit-jupiter:1.15.3"
 	testImplementation group: 'org.testcontainers', name: 'postgresql', version: '1.15.3'
 
-	// lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
-	// logging
 	implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '6.6'
 }
 

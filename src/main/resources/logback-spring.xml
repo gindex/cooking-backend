@@ -1,36 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
-    <appender name="stdout-json" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
-            <fieldNames class="net.logstash.logback.fieldnames.ShortenedFieldNames"/>
-            <shortenedLoggerNameLength>36</shortenedLoggerNameLength>
-            <fieldNames>
-                <timestamp>timestamp</timestamp>
-                <message>message</message>
-                <thread>thread</thread>
-                <logger>class</logger>
-                <version>[ignore]</version>
-                <level>level</level>
-                <levelValue>[ignore]</levelValue>
-                <caller>trace</caller>
-                <stackTrace>stacktrace</stackTrace>
-            </fieldNames>
-            <timeZone>UTC</timeZone>
-            <timestampPattern>yyyy-MM-dd'T'HH:mm:ss,SSSXXX</timestampPattern>
-            <throwableConverter
-                    class="net.logstash.logback.stacktrace.ShortenedThrowableConverter">
-                <maxDepthPerThrowable>20</maxDepthPerThrowable>
-                <maxLength>10000</maxLength>
-                <shortenedClassNameLength>30</shortenedClassNameLength>
-                <rootCauseFirst>true</rootCauseFirst>
-                <inlineHash>true</inlineHash>
-            </throwableConverter>
-        </encoder>
-    </appender>
-    <springProfile name="local,default">
-        <root level="INFO">
-            <appender-ref ref="stdout-json"/>
-        </root>
-    </springProfile>
+	<include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+	<springProperty scope="context" name="springAppName" source="spring.application.name"/>
+	<contextName>${springAppName}</contextName>
+	<appender name="stdout-plain" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${CONSOLE_LOG_PATTERN:-%clr(%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}
+			</pattern>
+			<charset>utf8</charset>
+		</encoder>
+	</appender>
+	<appender name="stdout-json" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="net.logstash.logback.encoder.LogstashEncoder">
+			<fieldNames class="net.logstash.logback.fieldnames.ShortenedFieldNames"/>
+			<shortenedLoggerNameLength>36</shortenedLoggerNameLength>
+			<fieldNames>
+				<timestamp>timestamp</timestamp>
+				<message>message</message>
+				<thread>thread</thread>
+				<logger>class</logger>
+				<version>[ignore]</version>
+				<level>level</level>
+				<levelValue>[ignore]</levelValue>
+				<caller>trace</caller>
+				<stackTrace>stacktrace</stackTrace>
+			</fieldNames>
+			<includeMdcKeyName>spanId</includeMdcKeyName>
+			<includeMdcKeyName>traceId</includeMdcKeyName>
+			<timeZone>UTC</timeZone>
+			<timestampPattern>yyyy-MM-dd'T'HH:mm:ss,SSSXXX</timestampPattern>
+			<throwableConverter
+				class="net.logstash.logback.stacktrace.ShortenedThrowableConverter">
+				<maxDepthPerThrowable>20</maxDepthPerThrowable>
+				<maxLength>10000</maxLength>
+				<shortenedClassNameLength>30</shortenedClassNameLength>
+				<rootCauseFirst>true</rootCauseFirst>
+				<inlineHash>true</inlineHash>
+			</throwableConverter>
+		</encoder>
+	</appender>
+	<springProfile name="local">
+		<root level="INFO">
+			<appender-ref ref="stdout-plain"/>
+		</root>
+	</springProfile>
+	<springProfile name="default">
+		<root level="INFO">
+			<appender-ref ref="stdout-json"/>
+		</root>
+	</springProfile>
 </configuration>

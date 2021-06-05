@@ -1,4 +1,3 @@
-
 spring:
   application:
     name: cooking-backend
@@ -8,9 +7,10 @@ spring:
     driver-class-name: 'org.postgresql.Driver'
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: validate
       jdbc:
         use_scrollable_resultset: true
+    open-in-view: false
 
 elide:
   modelPackage: 'com.github.cookingbackend.model'
@@ -23,6 +23,7 @@ elide:
   swagger:
     path: /api-docs
     enabled: true
+    name: Cooking Backend Service
   async:
     enabled: false
   aggregation-store:

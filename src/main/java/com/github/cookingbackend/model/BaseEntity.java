@@ -2,11 +2,9 @@ package com.github.cookingbackend.model;
 
 import java.io.Serializable;
 import java.time.OffsetDateTime;
-import java.util.UUID;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,11 +18,9 @@ import org.hibernate.annotations.UpdateTimestamp;
 abstract class BaseEntity implements Serializable {
 	@Id
 	@GeneratedValue
-	@NotNull
-	private UUID id;
+	private Long id;
 
 	@CreationTimestamp
-	@NotNull
 	private OffsetDateTime createdAt;
 
 	@UpdateTimestamp
