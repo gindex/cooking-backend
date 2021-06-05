@@ -9,6 +9,8 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
+      jdbc:
+        use_scrollable_resultset: true
 
 elide:
   modelPackage: 'com.github.cookingbackend.model'
@@ -19,7 +21,7 @@ elide:
     path: /graphql/api/v1
     enabled: false
   swagger:
-    path: /doc
+    path: /api-docs
     enabled: true
   async:
     enabled: false
