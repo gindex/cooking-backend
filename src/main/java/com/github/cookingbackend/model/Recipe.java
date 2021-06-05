@@ -1,25 +1,22 @@
 package com.github.cookingbackend.model;
 
 import com.yahoo.elide.annotation.Include;
-import java.util.UUID;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+@EqualsAndHashCode(callSuper = true)
 @Include(name = "recipe")
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Recipe {
+public class Recipe extends BaseEntity {
 
-	@Id
-	@GeneratedValue
-	@NotNull
-	UUID id;
+	@NotEmpty
+	private String title;
 
 }
