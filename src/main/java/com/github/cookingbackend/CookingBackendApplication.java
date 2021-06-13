@@ -1,8 +1,9 @@
 package com.github.cookingbackend;
 
+import java.util.TimeZone;
+import javax.annotation.PostConstruct;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
 public class CookingBackendApplication {
@@ -11,4 +12,8 @@ public class CookingBackendApplication {
 		SpringApplication.run(CookingBackendApplication.class, args);
 	}
 
+	@PostConstruct
+	public void defaultTimezone() {
+		TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+	}
 }
