@@ -2,7 +2,9 @@ package com.github.cookingbackend.model;
 
 import java.io.Serializable;
 import java.time.OffsetDateTime;
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import lombok.AllArgsConstructor;
@@ -17,12 +19,15 @@ import org.hibernate.annotations.UpdateTimestamp;
 @MappedSuperclass
 abstract class BaseEntity implements Serializable {
 	@Id
-	@GeneratedValue
-	private Long id;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Column(updatable = false, nullable = false)
+	private long id;
 
 	@CreationTimestamp
+	@Column(updatable = false, nullable = false)
 	private OffsetDateTime createdAt;
 
 	@UpdateTimestamp
+	@Column(nullable = false)
 	private OffsetDateTime updatedAt;
 }

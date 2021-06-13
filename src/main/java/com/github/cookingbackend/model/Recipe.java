@@ -15,6 +15,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.TypeDef;
@@ -32,6 +33,7 @@ import org.hibernate.annotations.TypeDef;
 public class Recipe extends BaseEntity {
 
 	@NotEmpty
+	@Column(nullable = false)
 	private String title;
 
 	@Column(
@@ -40,7 +42,7 @@ public class Recipe extends BaseEntity {
 	)
 	private Duration time;
 
-	private Integer servings;
+	private int servings;
 
 	@OneToMany(
 		cascade = CascadeType.ALL,
@@ -48,6 +50,8 @@ public class Recipe extends BaseEntity {
 	)
 	@JoinColumn(name = "recipe_id")
 	@Fetch(FetchMode.SUBSELECT)
+	@ToString.Exclude
+	@EqualsAndHashCode.Exclude
 	private List<Step> steps;
 
 	@OneToMany(
@@ -56,6 +60,8 @@ public class Recipe extends BaseEntity {
 	)
 	@JoinColumn(name = "recipe_id")
 	@Fetch(FetchMode.SUBSELECT)
+	@ToString.Exclude
+	@EqualsAndHashCode.Exclude
 	private Set<Ingredient> ingredients;
 
 	@OneToMany(
@@ -64,6 +70,8 @@ public class Recipe extends BaseEntity {
 	)
 	@JoinColumn(name = "recipe_id")
 	@Fetch(FetchMode.SUBSELECT)
+	@ToString.Exclude
+	@EqualsAndHashCode.Exclude
 	private Set<Tag> tags;
 
 	@OneToMany(
@@ -72,5 +80,7 @@ public class Recipe extends BaseEntity {
 	)
 	@JoinColumn(name = "recipe_id")
 	@Fetch(FetchMode.SUBSELECT)
+	@ToString.Exclude
+	@EqualsAndHashCode.Exclude
 	private Set<Note> notes;
 }
