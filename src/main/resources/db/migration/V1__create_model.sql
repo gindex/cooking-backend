@@ -74,5 +74,3 @@ create table tag
 comment on table tag is 'Describes tag of the recipe.';
 
 create sequence hibernate_sequence;
-
-alter sequence hibernate_sequence owner to cooking;
