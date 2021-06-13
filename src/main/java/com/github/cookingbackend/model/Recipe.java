@@ -37,10 +37,10 @@ public class Recipe extends BaseEntity {
 	private String title;
 
 	@Column(
-		name = "time",
+		name = "duration",
 		columnDefinition = "interval"
 	)
-	private Duration time;
+	private Duration duration;
 
 	private int servings;
 

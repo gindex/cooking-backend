@@ -6,7 +6,7 @@ create table recipe
     updated_at timestamp with time zone not null,
 
     title      text                     not null,
-    time       interval,
+    duration       interval,
     servings   int
 );
 

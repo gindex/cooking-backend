@@ -1,4 +1,4 @@
-insert into recipe (id, created_at, updated_at, servings, time, title)
+insert into recipe (id, created_at, updated_at, servings, duration, title)
 values (1, '2021-01-01T00:00:01Z', '2020-01-01T00:00:01Z', 2, '1 hour', 'Pizza'),
        (2, '2020-01-01T00:00:01Z', '2020-01-01T00:00:01Z', 4, '30 minute', 'Spaghetti');
 
