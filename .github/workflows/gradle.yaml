@@ -12,10 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: gradle/wrapper-validation-action@v1
+      - uses: actions/setup-python@v2
+      - uses: pre-commit/action@v2.0.3
       - uses: asdf-vm/actions/install@v1
         env:
           NODEJS_CHECK_SIGNATURES: no
-      - name: Check
+      - name: Gradle check
         run: |
           unset JAVA_HOME
           ./gradlew check --console=plain
