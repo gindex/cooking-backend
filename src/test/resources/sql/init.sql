@@ -21,3 +21,9 @@ values (1, '2020-01-01T00:00:01Z', '2020-01-01T00:00:01Z', 'Prepare', '1 Step', 
 insert into tag (id, created_at, updated_at, tag, recipe_id)
 values (1, '2020-01-01T00:00:01Z', '2020-01-01T00:00:01Z', 'italian', 1),
        (2, '2020-01-01T00:00:01Z', '2020-01-01T00:00:01Z', 'quick', 1);
+
+select nextval('hibernate_sequence');
+select nextval('hibernate_sequence');
+select nextval('hibernate_sequence');
+select nextval('hibernate_sequence');
+select nextval('hibernate_sequence');
