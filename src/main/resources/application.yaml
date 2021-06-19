@@ -39,3 +39,7 @@ elide:
     enabled: false
   dynamic-config:
     enabled: false
+
+server:
+  tomcat:
+    relaxed-query-chars: "[,]"
