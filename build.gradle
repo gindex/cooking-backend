@@ -21,7 +21,7 @@ dependencies {
     implementation group: 'com.yahoo.elide', name: 'elide-spring-boot-starter', version: '5.0.4'
 
     implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.22'
-    implementation group: 'org.flywaydb', name: 'flyway-core', version: '7.10.0'
+    implementation group: 'org.flywaydb', name: 'flyway-core', version: '7.11.0'
 
     implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.12.3'
     implementation group: 'com.vladmihalcea', name: 'hibernate-types-52', version: '2.12.0'
