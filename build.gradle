@@ -18,7 +18,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-security' exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
-    implementation group: 'com.yahoo.elide', name: 'elide-spring-boot-starter', version: '5.0.11'
+    implementation group: 'com.yahoo.elide', name: 'elide-spring-boot-starter', version: '6.0.2'
 
     implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.23'
     implementation group: 'org.flywaydb', name: 'flyway-core', version: '7.14.1'
