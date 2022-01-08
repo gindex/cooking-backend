@@ -24,7 +24,7 @@ dependencies {
     implementation group: 'org.flywaydb', name: 'flyway-core', version: '8.4.0'
 
     implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.13.1'
-    implementation group: 'com.vladmihalcea', name: 'hibernate-types-52', version: '2.12.1'
+    implementation group: 'com.vladmihalcea', name: 'hibernate-types-52', version: '2.14.0'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation "org.testcontainers:testcontainers:1.16.0"
