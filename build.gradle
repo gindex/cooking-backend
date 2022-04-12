@@ -29,7 +29,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation "org.testcontainers:testcontainers:1.16.2"
     testImplementation "org.testcontainers:junit-jupiter:1.16.0"
-    testImplementation group: 'org.testcontainers', name: 'postgresql', version: '1.16.2'
+    testImplementation group: 'org.testcontainers', name: 'postgresql', version: '1.17.0'
     testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '4.4.0'
 
     compileOnly 'org.projectlombok:lombok'
